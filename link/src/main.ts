@@ -1,5 +1,5 @@
 
-const botao = document.querySelector("button") as HTMLButtonElement;
+const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
 
 const mensagemDminioCom = () => {
@@ -15,11 +15,18 @@ const copiarUrl = (data: any) => {
   navigator.clipboard.writeText(data)
 }
 
+const mensagemVazioInput = () => {
+  alert("O input esta vazio")
+}
+
+
 const encurtarLink = () => {
   const input = document.querySelector("input") as HTMLInputElement;
   const regex =  /\.com$/;
   if (!regex.test(encodeURIComponent(input.value))) {
     mensagemDminioCom();
+  }else if (input.value === '') {
+    mensagemVazioInput()
   }else{
     fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(input.value)}`)
     .then(response => response.text())
