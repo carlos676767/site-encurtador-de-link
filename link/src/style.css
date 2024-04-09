@@ -23,6 +23,19 @@ h1{
     object-fit: cover;
     width: 500px;
 }
+.encurtarLink{
+  background-image: url(../public/assets/images/bg-boost-desktop.svg);
+  padding: 10px;
+}
+
+
+.inputVremelho{
+  border: 3px solid red;
+}
+
+.inputVerde{
+  border: 3px solid hsl(180, 66%, 49%) ;
+}
 
 main {
     display: flex;
@@ -30,6 +43,12 @@ main {
     align-items: center;
     height: 100vh;
 
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .registrar {
@@ -65,7 +84,9 @@ main {
     font-weight: bold;
 }
   
-  
+input{
+  border: none;
+}
   
   .menu {
     list-style: none;
