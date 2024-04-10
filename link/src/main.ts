@@ -46,29 +46,34 @@ const tagAExibirLink = (link: string) => {
   redirecionarLink.innerHTML = salvarLink
 };
 
-const addClassesEtirar = (elemento: HTMLElement, classe1: string, classe2: string) => {
-  elemento.classList.add(classe1)
-  elemento.classList.remove(classe2)
+
+
+const configuracoesCarregamnento = (valor: string, valor2: string) => {
+  const loader = document.querySelector(".loader") as HTMLDivElement
+  const encurtarLinksDiv = document.querySelector(".encurtarLinks") as HTMLDivElement
+  loader.style.display = valor
+  encurtarLinksDiv.style.display = valor2
 }
 
 const encurtarLink = async () => {
   if (url.value === "") {
     mensagemVazioInput();
-    url.classList.add("valorRed")
   } else {
     try {
+      configuracoesCarregamnento("block", "none")
       const data = await fetch("https://cleanuri.com/api/v1/shorten", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `url=${encodeURIComponent(url.value)}`,
+        body: `url=${(url.value)}`,
       });
       const response = await data.json();
       const { result_url } = response;
       exibirResultados(result_url);
       tagAExibirLink(result_url);
       armazenarLink = result_url
+      configuracoesCarregamnento("none", "")
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
