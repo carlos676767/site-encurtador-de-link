@@ -1,6 +1,6 @@
 - encurtar links[x]
 - qrcode com link
-- validacao de formularios
+- validacao de formularios[x]
 - salvar links no local storage 
 - criar um mini sistema de login e registro para entrar no site com json server
 - copiar links[x]

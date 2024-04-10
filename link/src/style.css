@@ -24,10 +24,19 @@ h1{
     width: 500px;
 }
 .encurtarLink{
-  background-image: url(../public/assets/images/bg-boost-desktop.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
+  gap: 5px;
 }
-
+.links{
+  background-image: url("../public/assets/images/bg-shorten-desktop.svg");
+  background-image: url("../public/assets/images/bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  padding: 30px;
+}
 
 .inputVremelho{
   border: 3px solid red;
@@ -37,18 +46,52 @@ h1{
   border: 3px solid hsl(180, 66%, 49%) ;
 }
 
+.saiba{
+  background-color: #2ACFCF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+  outline: none;
+  width: 30%;
+}
+
+#rerecionarLink{
+  color:hsl(180, 66%, 49%) ;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 100px;
+}
 
+div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .links{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70%;
+  gap: 5px;
+}
+
+.enviar{
+  width: 15%;
+  background-color: #2ACFCF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
 }
 
 .registrar {
@@ -86,6 +129,13 @@ main {
   
 input{
   border: none;
+}
+
+.valor{
+  width: 100%;
+  border: 2px solid #2ACFCF;
+  padding: 8px;
+  border-radius: 5px;
 }
   
   .menu {
@@ -126,7 +176,7 @@ input{
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     .menu {
         display: block;
         display: flex;

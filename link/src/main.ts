@@ -18,11 +18,16 @@ const mensagemVazioInput = () => {
 };
 
 const url = document.querySelector(".valor") as HTMLInputElement;
-
 const exibirResultados = (link: string) => {
-  const exibirLink = document.getElementById("p") as HTMLElement
-  exibirLink.innerHTML = link
-}
+  const exibirLink = document.getElementById("p") as HTMLElement;
+  exibirLink.innerHTML = link;
+};
+
+const tagAExibirLink = (link: string) => {
+  const redirecionarLink = document.getElementById("rerecionarLink") as HTMLAnchorElement;
+  const salvarLink = redirecionarLink.href = link;
+  redirecionarLink.innerHTML = salvarLink
+};
 
 const encurtarLink = async () => {
   if (url.value === "") {
@@ -37,8 +42,9 @@ const encurtarLink = async () => {
         body: `url=${encodeURIComponent(url.value)}`,
       });
       const response = await data.json();
-      const {result_url} = response
-      exibirResultados(result_url)
+      const { result_url } = response;
+      exibirResultados(result_url);
+      tagAExibirLink(result_url);
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
