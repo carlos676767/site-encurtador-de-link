@@ -14,8 +14,11 @@ const copiarUrl = (data: any) => {
 };
 
 const mensagemVazioInput = () => {
-  alert("O input esta vazio");
+  const mensagemVazio = document.getElementById("mensagemVazio") as HTMLParagraphElement
+  mensagemVazio.innerHTML = "Por favor Digite um link."
 };
+
+
 
 const url = document.querySelector(".valor") as HTMLInputElement;
 const exibirResultados = (link: string) => {
@@ -43,11 +46,15 @@ const tagAExibirLink = (link: string) => {
   redirecionarLink.innerHTML = salvarLink
 };
 
-
+const addClassesEtirar = (elemento: HTMLElement, classe1: string, classe2: string) => {
+  elemento.classList.add(classe1)
+  elemento.classList.remove(classe2)
+}
 
 const encurtarLink = async () => {
   if (url.value === "") {
     mensagemVazioInput();
+    url.classList.add("valorRed")
   } else {
     try {
       const data = await fetch("https://cleanuri.com/api/v1/shorten", {
@@ -61,7 +68,7 @@ const encurtarLink = async () => {
       const { result_url } = response;
       exibirResultados(result_url);
       tagAExibirLink(result_url);
-     armazenarLink = result_url
+      armazenarLink = result_url
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }

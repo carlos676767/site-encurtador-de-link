@@ -10,6 +10,7 @@ h1{
     font-style: normal;
     font-weight: bolder;
     font-size: 40px;
+    color: hsl(257, 27%, 26%);
 }
 
 .texto-links{
@@ -28,7 +29,7 @@ h1{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  gap: 5px;
+  gap: 30px;
 }
 .links{
   background-image: url("../public/assets/images/bg-shorten-desktop.svg");
@@ -38,7 +39,7 @@ h1{
   padding: 30px;
 }
 
-.inputVremelho{
+.valorRed{
   border: 3px solid red;
 }
 
@@ -58,8 +59,34 @@ h1{
   width: 30%;
 }
 
+#copiarUrl{
+  background-color: #2ACFCF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+  outline: none;
+  width: 100%;
+}
+
+#copiarUrl:hover{
+  background-color: hsl(257, 27%, 26%);
+}
 #rerecionarLink{
   color:hsl(180, 66%, 49%) ;
+
+}
+
+.linksResultados{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid hsl(180, 66%, 49%);
 }
 
 main {
@@ -67,6 +94,11 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+
+#p{
+  color: hsl(257, 27%, 26%);
+  font-weight: bold;
 }
 
 div{
@@ -80,7 +112,7 @@ div{
   flex-direction: column;
   justify-content: center;
   width: 70%;
-  gap: 5px;
+  gap: 30px;
 }
 
 .enviar{
