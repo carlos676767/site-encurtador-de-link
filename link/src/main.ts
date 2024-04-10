@@ -23,11 +23,27 @@ const exibirResultados = (link: string) => {
   exibirLink.innerHTML = link;
 };
 
+const copiarUrlButton = document.getElementById("copiarUrl") as HTMLButtonElement
+let armazenarLink: string = ""
+const mudarNomeBotao = () => {
+  copiarUrlButton.innerHTML = "Copiado!"
+  copiarUrl(armazenarLink)
+  setTimeout(() => {
+    copiarUrlButton.innerHTML = "Copiar"
+  }, 3000);
+}
+
+copiarUrlButton.addEventListener("click", () => {
+ mudarNomeBotao()
+})
+
 const tagAExibirLink = (link: string) => {
   const redirecionarLink = document.getElementById("rerecionarLink") as HTMLAnchorElement;
   const salvarLink = redirecionarLink.href = link;
   redirecionarLink.innerHTML = salvarLink
 };
+
+
 
 const encurtarLink = async () => {
   if (url.value === "") {
@@ -45,6 +61,7 @@ const encurtarLink = async () => {
       const { result_url } = response;
       exibirResultados(result_url);
       tagAExibirLink(result_url);
+     armazenarLink = result_url
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
