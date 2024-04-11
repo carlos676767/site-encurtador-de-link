@@ -103,15 +103,19 @@ const aplicarDarkMode = () => {
   })
 }
 
-
+const salvarEstadoCheckbox = (valorBoleano: boolean) => {
+  darkModeButton.checked = valorBoleano
+}
 
 const salvarDdaosLocalStorage = () => {
   const recuperarValor = localStorage.getItem("darkmode")
   if (recuperarValor === String(true)) {
     addCLssesCss(document.body, "daerkmode", "whiteMode")
+    salvarEstadoCheckbox(true)
   }else{
     addCLssesCss(document.body, "whiteMode","daerkmode")
     document.body.classList.remove("daerkmode")
+    salvarEstadoCheckbox(false)
   }
 }
 salvarDdaosLocalStorage()
