@@ -54,6 +54,12 @@ const configuracoesCarregamnento = (valor: string, valor2: string) => {
 
 const links: string[] = []
 
+const historicoLinks = (urls: string) => {
+  links.push(urls)
+  localStorage.setItem("linksSalvos", JSON.stringify(links))
+}
+
+
 const encurtarLink = async () => {
   if (url.value === "") {
     mensagemVazioInput();
@@ -71,10 +77,9 @@ const encurtarLink = async () => {
       const { result_url } = response;
       exibirResultados(result_url);
       tagAExibirLink(result_url);
-      armazenarLink = result_url
-      links.push(result_url)
-      localStorage.setItem("linksSalvos", JSON.stringify(links))
       configuracoesCarregamnento("none", "")
+      armazenarLink = result_url
+      historicoLinks(result_url)
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
@@ -91,6 +96,9 @@ const menu = document.querySelector(".menu") as HTMLElement
 const h1 = document.querySelector("h1") as HTMLElement
 const logo = document.querySelector(".logo") as HTMLImageElement
 const textoLinks = document.querySelector(".texto-links") as HTMLParagraphElement
+const li = document.querySelectorAll("strong")
+console.log(li);
+
 
 const addCLssesCss = (elementoHtml: HTMLElement, classeCSS: string, classeCss2: string) => {
   elementoHtml.classList.add(classeCSS)
@@ -106,6 +114,7 @@ const aplicarDarkMode = () => {
         addCLssesCss(h1, "corBlack", "corAul")
         addCLssesCss(logo, "logoWhite", "logo")
         addCLssesCss(textoLinks, "daerkmode", "textoLinks")
+        li.forEach(lis => {addCLssesCss(lis, "daerkmode", "whiteMode")});
         localStorage.setItem("darkmode", String(true))
       }else{
         addCLssesCss(document.body, "whiteMode","daerkmode")
@@ -114,6 +123,7 @@ const aplicarDarkMode = () => {
         addCLssesCss(h1, "corAul","corBlack")
         addCLssesCss(logo,  "logo","logoWhite")
         addCLssesCss(textoLinks, "textoLinks","daerkmode")
+        li.forEach(lis => {addCLssesCss(lis, "whiteMode","daerkmode",)});
         localStorage.setItem("darkmode", String(false))
       }
   })
@@ -137,6 +147,7 @@ const salvarDdaosLocalStorage = () => {
     addCLssesCss(h1, "corBlack", "corAul")
     addCLssesCss(logo, "logoWhite", "logo")
     addCLssesCss(textoLinks, "daerkmode", "textoLinks")
+    li.forEach(lis => {addCLssesCss(lis, "daerkmode", "whiteMode")});
     salvarEstadoCheckbox(true)
   }else{
     addCLssesCss(document.body, "whiteMode","daerkmode")
@@ -146,6 +157,7 @@ const salvarDdaosLocalStorage = () => {
     addCLssesCss(h1, "corAul","corBlack")
     addCLssesCss(logo,  "logo","logoWhite")
     addCLssesCss(textoLinks, "textoLinks","daerkmode")
+    li.forEach(lis => {addCLssesCss(lis, "whiteMode","daerkmode",)});
     salvarEstadoCheckbox(false)
   }
 }

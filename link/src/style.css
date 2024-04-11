@@ -279,6 +279,8 @@ input {
  color: white;
 }
 
+
+
 .whiteMode{
   background-color: white;
 }
@@ -360,4 +362,19 @@ input {
     transform: rotate(-135deg);
     top: -0.4375rem;
   }
+  main{
+    flex-direction: column;
+  }
+  .imagem-encurtador{
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.links, .enviar,.linksResultados{
+  width: 100%;
+  flex-wrap: wrap;
 }
