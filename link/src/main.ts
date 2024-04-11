@@ -85,6 +85,10 @@ botao.addEventListener("click", () => {
 });
 
 const darkModeButton = document.getElementById("dark-mode-toggle") as HTMLInputElement
+const header = document.querySelector("header") as HTMLHeadElement
+const menu = document.querySelector(".menu") as HTMLElement
+const h1 = document.querySelector("h1") as HTMLElement
+
 
 const addCLssesCss = (elementoHtml: HTMLElement, classeCSS: string, classeCss2: string) => {
   elementoHtml.classList.add(classeCSS)
@@ -95,9 +99,15 @@ const aplicarDarkMode = () => {
   darkModeButton.addEventListener("change", () => {
       if (darkModeButton.checked) {
         addCLssesCss(document.body, "daerkmode", "whiteMode")
+        addCLssesCss(header, "daerkmode", "whiteMode")
+        addCLssesCss(menu, "daerkmode", "whiteMode")
+        addCLssesCss(h1, "corBlack", "corAul")
         localStorage.setItem("darkmode", String(true))
       }else{
         addCLssesCss(document.body, "whiteMode","daerkmode")
+        addCLssesCss(header, "whiteMode","daerkmode")
+        addCLssesCss(menu, "whiteMode","daerkmode")
+        addCLssesCss(h1, "corAul","corBlack")
         localStorage.setItem("darkmode", String(false))
       }
   })
@@ -111,10 +121,16 @@ const salvarDdaosLocalStorage = () => {
   const recuperarValor = localStorage.getItem("darkmode")
   if (recuperarValor === String(true)) {
     addCLssesCss(document.body, "daerkmode", "whiteMode")
+    addCLssesCss(header, "daerkmode", "whiteMode")
+    addCLssesCss(menu, "daerkmode", "whiteMode")
+    addCLssesCss(h1, "corBlack", "corAul")
     salvarEstadoCheckbox(true)
   }else{
     addCLssesCss(document.body, "whiteMode","daerkmode")
-    document.body.classList.remove("daerkmode")
+    addCLssesCss(header, "whiteMode","daerkmode")
+    addCLssesCss(document.body, "whiteMode","daerkmode")
+    addCLssesCss(menu, "whiteMode","daerkmode")
+    addCLssesCss(h1, "corAul","corBlack")
     salvarEstadoCheckbox(false)
   }
 }
