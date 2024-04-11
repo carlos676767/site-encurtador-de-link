@@ -53,15 +53,18 @@ const configuracoesCarregamnento = (valor: string, valor2: string) => {
 }
 
 const links: string[] = []
-
+//aqui ainda sera mexido
 const historicoLinks = (urls: string) => {
   links.push(urls)
   localStorage.setItem("linksSalvos", JSON.stringify(links))
 }
 
+const inputVzio = () => {
+  return url.value == ""
+}
 
 const encurtarLink = async () => {
-  if (url.value === "") {
+  if (inputVzio()) {
     mensagemVazioInput();
   } else {
     try {
