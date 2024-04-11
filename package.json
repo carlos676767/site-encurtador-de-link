@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23"
+    "@types/qrcode": "^1.5.5",
+    "json-server": "^1.0.0-alpha.23",
+    "qrcode": "^1.5.3"
   }
 }

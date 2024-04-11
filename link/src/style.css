@@ -372,9 +372,9 @@ input {
     object-fit: cover;
     width: 100%;
   }
+  .links, .enviar,.linksResultados{
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 
-.links, .enviar,.linksResultados{
-  width: 100%;
-  flex-wrap: wrap;
-}

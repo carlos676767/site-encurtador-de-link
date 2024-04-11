@@ -1,3 +1,4 @@
+
 const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
 
@@ -63,6 +64,10 @@ const inputVzio = () => {
   return url.value == ""
 }
 
+const guardarUrl = (result: string) => {
+ return armazenarLink = result
+}
+
 const encurtarLink = async () => {
   if (inputVzio()) {
     mensagemVazioInput();
@@ -81,8 +86,9 @@ const encurtarLink = async () => {
       exibirResultados(result_url);
       tagAExibirLink(result_url);
       configuracoesCarregamnento("none", "")
-      armazenarLink = result_url
       historicoLinks(result_url)
+      guardarUrl(result_url)
+      gerarQrCodes()
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
@@ -166,3 +172,19 @@ const salvarDdaosLocalStorage = () => {
 }
 salvarDdaosLocalStorage()
 aplicarDarkMode()
+
+
+const gerarQrCodes = async() => {
+  try {
+    const url = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${armazenarLink}&size=200x200&margin=0`, {
+      method: "GET"
+    })
+    console.log(url);
+    
+  } catch (erro) {
+    console.log(erro);
+    
+  }
+
+
+}
