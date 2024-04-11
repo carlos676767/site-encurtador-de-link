@@ -1,8 +1,5 @@
 const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
-const mensagemDminioCom = () => {
-  alert("Use o .com");
-};
 
 const exibirUrl = (data: string) => {
   const p = document.querySelector("p") as HTMLParagraphElement;
@@ -56,7 +53,7 @@ const configuracoesCarregamnento = (valor: string, valor2: string) => {
 }
 
 const links: string[] = []
-let contador: number = 0
+
 const encurtarLink = async () => {
   if (url.value === "") {
     mensagemVazioInput();
@@ -75,12 +72,8 @@ const encurtarLink = async () => {
       exibirResultados(result_url);
       tagAExibirLink(result_url);
       armazenarLink = result_url
-      if (links.push(result_url)) {
-        ++contador
-        localStorage.setItem("linksSalvos", JSON.stringify(links))
-      }
-    
-      
+      links.push(result_url)
+      localStorage.setItem("linksSalvos", JSON.stringify(links))
       configuracoesCarregamnento("none", "")
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
@@ -96,7 +89,8 @@ const darkModeButton = document.getElementById("dark-mode-toggle") as HTMLInputE
 const header = document.querySelector("header") as HTMLHeadElement
 const menu = document.querySelector(".menu") as HTMLElement
 const h1 = document.querySelector("h1") as HTMLElement
-
+const logo = document.querySelector(".logo") as HTMLImageElement
+const textoLinks = document.querySelector(".texto-links") as HTMLParagraphElement
 
 const addCLssesCss = (elementoHtml: HTMLElement, classeCSS: string, classeCss2: string) => {
   elementoHtml.classList.add(classeCSS)
@@ -110,12 +104,16 @@ const aplicarDarkMode = () => {
         addCLssesCss(header, "daerkmode", "whiteMode")
         addCLssesCss(menu, "daerkmode", "whiteMode")
         addCLssesCss(h1, "corBlack", "corAul")
+        addCLssesCss(logo, "logoWhite", "logo")
+        addCLssesCss(textoLinks, "daerkmode", "textoLinks")
         localStorage.setItem("darkmode", String(true))
       }else{
         addCLssesCss(document.body, "whiteMode","daerkmode")
         addCLssesCss(header, "whiteMode","daerkmode")
         addCLssesCss(menu, "whiteMode","daerkmode")
         addCLssesCss(h1, "corAul","corBlack")
+        addCLssesCss(logo,  "logo","logoWhite")
+        addCLssesCss(textoLinks, "textoLinks","daerkmode")
         localStorage.setItem("darkmode", String(false))
       }
   })
@@ -124,6 +122,8 @@ const aplicarDarkMode = () => {
 const salvarEstadoCheckbox = (valorBoleano: boolean) => {
   darkModeButton.checked = valorBoleano
 }
+
+
 
 const salvarDdaosLocalStorage = () => {
   const recuperarValor = localStorage.getItem("darkmode")
@@ -135,14 +135,17 @@ const salvarDdaosLocalStorage = () => {
     addCLssesCss(header, "daerkmode", "whiteMode")
     addCLssesCss(menu, "daerkmode", "whiteMode")
     addCLssesCss(h1, "corBlack", "corAul")
+    addCLssesCss(logo, "logoWhite", "logo")
+    addCLssesCss(textoLinks, "daerkmode", "textoLinks")
     salvarEstadoCheckbox(true)
-
   }else{
     addCLssesCss(document.body, "whiteMode","daerkmode")
     addCLssesCss(header, "whiteMode","daerkmode")
     addCLssesCss(document.body, "whiteMode","daerkmode")
     addCLssesCss(menu, "whiteMode","daerkmode")
     addCLssesCss(h1, "corAul","corBlack")
+    addCLssesCss(logo,  "logo","logoWhite")
+    addCLssesCss(textoLinks, "textoLinks","daerkmode")
     salvarEstadoCheckbox(false)
   }
 }

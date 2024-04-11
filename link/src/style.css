@@ -209,10 +209,7 @@ div {
   left: 0;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+
 
 input {
   border: none;
@@ -277,12 +274,12 @@ input {
 }
 
 .daerkmode {
- background-color: rgba(0, 0, 0, 0.7);
+ background-color:#333333;
  transition: 0.5s;
  color: white;
 }
 
-whiteMode{
+.whiteMode{
   background-color: white;
 }
 
@@ -292,6 +289,10 @@ whiteMode{
 
 .corAul{
   color: hsl(257, 27%, 26%);
+}
+
+.logoWhite{
+  filter: grayscale(100%) brightness(1000%);
 }
 
 @media (max-width: 768px) {
