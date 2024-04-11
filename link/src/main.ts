@@ -55,6 +55,8 @@ const configuracoesCarregamnento = (valor: string, valor2: string) => {
   encurtarLinksDiv.style.display = valor2
 }
 
+const links: string[] = []
+let contador: number = 0
 const encurtarLink = async () => {
   if (url.value === "") {
     mensagemVazioInput();
@@ -73,6 +75,12 @@ const encurtarLink = async () => {
       exibirResultados(result_url);
       tagAExibirLink(result_url);
       armazenarLink = result_url
+      if (links.push(result_url)) {
+        ++contador
+        localStorage.setItem("linksSalvos", JSON.stringify(links))
+      }
+    
+      
       configuracoesCarregamnento("none", "")
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
@@ -119,12 +127,16 @@ const salvarEstadoCheckbox = (valorBoleano: boolean) => {
 
 const salvarDdaosLocalStorage = () => {
   const recuperarValor = localStorage.getItem("darkmode")
+  const recuperar = JSON.parse(localStorage.getItem("linksSalvos") ?? "{}")
+  console.log(recuperar);
+  
   if (recuperarValor === String(true)) {
     addCLssesCss(document.body, "daerkmode", "whiteMode")
     addCLssesCss(header, "daerkmode", "whiteMode")
     addCLssesCss(menu, "daerkmode", "whiteMode")
     addCLssesCss(h1, "corBlack", "corAul")
     salvarEstadoCheckbox(true)
+
   }else{
     addCLssesCss(document.body, "whiteMode","daerkmode")
     addCLssesCss(header, "whiteMode","daerkmode")
