@@ -83,3 +83,36 @@ const encurtarLink = async () => {
 botao.addEventListener("click", () => {
   encurtarLink();
 });
+
+const darkModeButton = document.getElementById("dark-mode-toggle") as HTMLInputElement
+
+const addCLssesCss = (elementoHtml: HTMLElement, classeCSS: string, classeCss2: string) => {
+  elementoHtml.classList.add(classeCSS)
+  elementoHtml.classList.remove(classeCss2)
+}
+
+const aplicarDarkMode = () => {
+  darkModeButton.addEventListener("change", () => {
+      if (darkModeButton.checked) {
+        addCLssesCss(document.body, "daerkmode", "whiteMode")
+        localStorage.setItem("darkmode", String(true))
+      }else{
+        addCLssesCss(document.body, "whiteMode","daerkmode")
+        localStorage.setItem("darkmode", String(false))
+      }
+  })
+}
+
+
+
+const salvarDdaosLocalStorage = () => {
+  const recuperarValor = localStorage.getItem("darkmode")
+  if (recuperarValor === String(true)) {
+    addCLssesCss(document.body, "daerkmode", "whiteMode")
+  }else{
+    addCLssesCss(document.body, "whiteMode","daerkmode")
+    document.body.classList.remove("daerkmode")
+  }
+}
+salvarDdaosLocalStorage()
+aplicarDarkMode()
