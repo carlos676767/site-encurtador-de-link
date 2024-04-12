@@ -174,17 +174,22 @@ salvarDdaosLocalStorage()
 aplicarDarkMode()
 
 
+
 const gerarQrCodes = async() => {
   try {
-    const url = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${armazenarLink}&size=200x200&margin=0`, {
+    const data = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${armazenarLink}&size=200x200&margin=0`, {
       method: "GET"
     })
+    const {url} = data
     console.log(url);
-    
+    rececberImagemQrCode(url)
   } catch (erro) {
     console.log(erro);
     
   }
+}
 
-
+const rececberImagemQrCode = (imageQrCode: string) => {
+  const imagemQrCoDE = document.querySelector(".qrcode") as HTMLImageElement
+  imagemQrCoDE.src = imageQrCode
 }

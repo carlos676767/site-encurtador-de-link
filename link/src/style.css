@@ -22,7 +22,7 @@ h1 {
 
 .imagem-encurtador {
   object-fit: cover;
-  width: 500px;
+  width: 400px;
 }
 .encurtarLinks {
   display: flex;
@@ -297,6 +297,10 @@ input {
   filter: grayscale(100%) brightness(1000%);
 }
 
+img{
+  width: 100px;
+}
+
 @media (max-width: 768px) {
   .menu {
     display: block;
@@ -320,7 +324,6 @@ input {
     margin-inline: 1rem;
     border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
     border-radius: 0;
-    color: #11ab7c;
     font-size: 15px;
   }
 
@@ -363,6 +366,10 @@ input {
     top: -0.4375rem;
   }
   main{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
   }
   .imagem-encurtador{
@@ -372,9 +379,13 @@ input {
     object-fit: cover;
     width: 100%;
   }
-  .links, .enviar,.linksResultados{
+  .links, .enviar,.linksResultados, h1{
     width: 100%;
     flex-wrap: wrap;
+  }
+  
+  br{
+    display: none;
   }
 }
 
