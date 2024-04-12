@@ -47,17 +47,29 @@
     </main>
 
     <div class="encurtarLinks">
+      <div class="linksResultados">
+        <p id="p">https://linkExemplo.com.br</p>
+        <a href="https://linkExeemplo.com.br" id="rerecionarLink">https://linkExemplo.com.br</a>
+        <button id="copiarUrl">Copiar</button>
+      </div>
       <div class="links">
         <label><input type="text" maxlength="10000000000" class="valor"> <button class="enviar" id="enviar">Encurtar</button></label>
         <p id="mensagemVazio"></p>
-        <div class="qrcodes">
-          <img src="" alt="qrcode" class="qrcode">
+        <div class="grid-container">
+          <div class="item">
+            <img src="public/qrcode exemplo.png" alt="qrcode" class="qrcode">
+          </div>
+          <div class="item">
+            <p>Personalize seu QR Code</p>
+            <input type="color" class="color-input">
+            <input type="color" class="color-input">
+            <input type="range" min="50" max="200" value="100" class="size-input">
+            <button class="botaoGerarQrCoDE">Criar QrCoDE</button>
+            <button>Donwload QrCoDE</button>
+          </div>
         </div>
-        <div class="linksResultados">
-          <p id="p">https://linkExemplo.com.br</p>
-          <a href="https://linkExeemplo.com.br" id="rerecionarLink">https://linkExemplo.com.br</a>
-          <button id="copiarUrl">Copiar</button>
-        </div>
+        
+        
        
       </div>
     </div>

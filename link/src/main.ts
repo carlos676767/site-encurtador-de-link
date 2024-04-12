@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
 
@@ -88,7 +88,6 @@ const encurtarLink = async () => {
       configuracoesCarregamnento("none", "")
       historicoLinks(result_url)
       guardarUrl(result_url)
-      gerarQrCodes()
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
@@ -189,7 +188,22 @@ const gerarQrCodes = async() => {
   }
 }
 
+const mensagemQrGerado = () => {
+  Swal.fire({
+    text: "QrCoDe gerado com sucesso!",
+    icon: "success"
+  });
+}
+
+
 const rececberImagemQrCode = (imageQrCode: string) => {
   const imagemQrCoDE = document.querySelector(".qrcode") as HTMLImageElement
   imagemQrCoDE.src = imageQrCode
 }
+
+const botaoGerarQrCoDE = document.querySelector(".botaoGerarQrCoDE") as HTMLButtonElement
+botaoGerarQrCoDE.addEventListener("click", () => {
+  gerarQrCodes()
+  mensagemQrGerado()
+})
+

@@ -301,6 +301,35 @@ img{
   width: 100px;
 }
 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px; 
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.qrcode {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc; 
+  object-fit: cover;
+  border: 5px solid #2acfcf;
+}
+
+.color-input {
+  margin-top: 10px;
+}
+
+.size-input {
+  margin-top: 10px;
+}
+
 @media (max-width: 768px) {
   .menu {
     display: block;
