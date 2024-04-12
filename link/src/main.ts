@@ -207,3 +207,4 @@ botaoGerarQrCoDE.addEventListener("click", () => {
   mensagemQrGerado()
 })
 
+const botaoBaixarQrCoDE = document.querySelector(".baixarQrCodeButton")
