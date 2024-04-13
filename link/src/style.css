@@ -18,6 +18,16 @@ h1 {
   font-family: "Poppins", sans-serif;
   color: hsl(0, 0%, 75%);
   font-weight: bolder;
+
+}
+
+
+
+.textosInformacoes{
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  color: hsl(0, 0%, 75%);
+  font-weight: bolder;
 }
 
 .imagem-encurtador {
@@ -130,6 +140,16 @@ div {
   font-family: "Poppins";
 }
 
+.botaoGerarQrCoDE{
+  width: 100%;
+  background-color: #2acfcf;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
 .registrar {
   padding: 5px;
   border: none;
@@ -324,11 +344,14 @@ img{
 
 .color-input {
   margin-top: 10px;
+  border: 2px solid #2acfcf;
+  width: 100%;
 }
 
 .size-input {
   margin-top: 10px;
 }
+
 
 @media (max-width: 768px) {
   .menu {
@@ -415,6 +438,13 @@ img{
   
   br{
     display: none;
+  }
+  .grid-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .color-input{
+    width: 100%;
   }
 }
 
