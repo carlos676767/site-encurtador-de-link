@@ -1,5 +1,8 @@
 import Swal from 'sweetalert2'
+import html2canvas from 'html2canvas';
+import { image } from 'html2canvas/dist/types/css/types/image';
 const botao = document.querySelector(".enviar") as HTMLButtonElement;
+
 
 
 const exibirUrl = (data: string) => {
@@ -88,6 +91,7 @@ const encurtarLink = async () => {
       configuracoesCarregamnento("none", "")
       historicoLinks(result_url)
       guardarUrl(result_url)
+      exibirUrl(result_url)
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
@@ -105,7 +109,7 @@ const h1 = document.querySelector("h1") as HTMLElement
 const logo = document.querySelector(".logo") as HTMLImageElement
 const textoLinks = document.querySelector(".texto-links") as HTMLParagraphElement
 const li = document.querySelectorAll("strong")
-console.log(li);
+
 
 
 const addCLssesCss = (elementoHtml: HTMLElement, classeCSS: string, classeCss2: string) => {
@@ -174,6 +178,14 @@ aplicarDarkMode()
 
 
 
+
+const imagemQrCoDE = document.querySelector(".qrcode") as HTMLImageElement
+const rececberImagemQrCode = (imageQrCode: string) => {
+  imagemQrCoDE.src = imageQrCode
+  baixarQrCODE(imagemQrCoDE)
+}
+
+
 const gerarQrCodes = async() => {
   try {
     const data = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${armazenarLink}&size=200x200&margin=0`, {
@@ -183,9 +195,20 @@ const gerarQrCodes = async() => {
     console.log(url);
     rececberImagemQrCode(url)
   } catch (erro) {
-    console.log(erro);
-    
+    console.log(erro);  
   }
+}
+
+
+
+const baixarQrCODE = (qr: HTMLElement) => {
+  html2canvas(qr).then((canvas) => {
+    const imagemBase64 = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = imagemBase64;
+    link.download = "qrCode.png";
+    link.click();
+  });
 }
 
 const mensagemQrGerado = () => {
@@ -195,16 +218,12 @@ const mensagemQrGerado = () => {
   });
 }
 
-
-const rececberImagemQrCode = (imageQrCode: string) => {
-  const imagemQrCoDE = document.querySelector(".qrcode") as HTMLImageElement
-  imagemQrCoDE.src = imageQrCode
-}
-
 const botaoGerarQrCoDE = document.querySelector(".botaoGerarQrCoDE") as HTMLButtonElement
 botaoGerarQrCoDE.addEventListener("click", () => {
   gerarQrCodes()
   mensagemQrGerado()
 })
 
-const botaoBaixarQrCoDE = document.querySelector(".baixarQrCodeButton")
+
+
+
