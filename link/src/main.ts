@@ -1,6 +1,5 @@
 import Swal from 'sweetalert2'
 import html2canvas from 'html2canvas';
-import { image } from 'html2canvas/dist/types/css/types/image';
 const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
 
@@ -23,7 +22,7 @@ const mensagemVazioInput = () => {
 
 const url = document.querySelector(".valor") as HTMLInputElement;
 const exibirResultados = (link: string) => {
-  const exibirLink = document.getElementById("p") as HTMLElement;
+  const exibirLink = document.getElementById("exibirLink") as HTMLElement;
   exibirLink.innerHTML = link;
 };
 
@@ -178,7 +177,6 @@ aplicarDarkMode()
 
 
 
-
 const imagemQrCoDE = document.querySelector(".qrcode") as HTMLImageElement
 const rececberImagemQrCode = (imageQrCode: string) => {
   imagemQrCoDE.src = imageQrCode
@@ -186,20 +184,23 @@ const rececberImagemQrCode = (imageQrCode: string) => {
 }
 
 
-const gerarQrCodes = async() => {
+const gerarQrCodes = async () => {
   try {
-    const data = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${armazenarLink}&size=200x200&margin=0`, {
-      method: "GET"
-    })
-    const {url} = data
-    console.log(url);
-    rececberImagemQrCode(url)
+    const largura = document.querySelector(".largura") as HTMLInputElement
+    const altura = document.querySelector(".altura") as HTMLInputElement
+    const data = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(armazenarLink)}&size=${largura.value}x${altura.value}`,
+      {
+        method: "GET"
+      }
+    );
+    const { url } = data;
+    console.log(data);
+    rececberImagemQrCode(url);
+    console.log(data);
   } catch (erro) {
-    console.log(erro);  
+    console.log(erro);
   }
-}
-
-
+};
 
 const baixarQrCODE = (qr: HTMLElement) => {
   html2canvas(qr).then((canvas) => {

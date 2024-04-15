@@ -101,6 +101,7 @@ h1 {
   background-color: white;
   padding: 10px;
   border: 2px solid hsl(180, 66%, 49%);
+  width: 70%;
 }
 
 main {
@@ -110,7 +111,7 @@ main {
   margin-top: 100px;
 }
 
-#p {
+#exibirLink {
   color: hsl(257, 27%, 26%);
   font-weight: bold;
 }
