@@ -141,16 +141,7 @@ div {
   font-family: "Poppins";
 }
 
-.botaoGerarQrCoDE{
-  width: 100%;
-  background-color: #2acfcf;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: "Poppins";
-}
+
 .registrar {
   padding: 5px;
   border: none;
@@ -236,7 +227,7 @@ input {
   border: none;
 }
 
-.valor {
+.valor, .largura, .altura {
   width: 100%;
   border: 2px solid #2acfcf;
   padding: 8px;
@@ -353,6 +344,91 @@ img{
   margin-top: 10px;
 }
 
+input{
+  outline: none;
+}
+
+.botaoGerarQrCoDE {
+  width: 100%;
+  background-color: #2acfcf;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+.botaoGerarQrCoDE span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.botaoGerarQrCoDE:before,
+.botaoGerarQrCoDE:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.botaoGerarQrCoDE:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.botaoGerarQrCoDE:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.botaoGerarQrCoDE:hover{
+  background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+}
+.botaoGerarQrCoDE:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.botaoGerarQrCoDE:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.botaoGerarQrCoDE span:before,
+.botaoGerarQrCoDE span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.botaoGerarQrCoDE span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.botaoGerarQrCoDE span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.botaoGerarQrCoDE span:hover:before {
+  width: 100%;
+}
+.botaoGerarQrCoDE span:hover:after {
+  width: 100%;
+}
 
 @media (max-width: 768px) {
   .menu {

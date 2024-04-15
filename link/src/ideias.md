@@ -3,5 +3,5 @@
 - validacao de formularios[x]
 - salvar links no local storage 
 - copiar links[x]
-- fazer download dos qrCodes. 
+- fazer download dos qrCodes[x]. 
 - traducao de idiomasnpx json

@@ -16,6 +16,7 @@ const copiarUrl = (data: any) => {
 const mensagemVazioInput = () => {
   const mensagemVazio = document.getElementById("mensagemVazio") as HTMLParagraphElement
   mensagemVazio.innerHTML = "Por favor Digite um link."
+  return mensagemVazio
 };
 
 
@@ -225,6 +226,28 @@ botaoGerarQrCoDE.addEventListener("click", () => {
   mensagemQrGerado()
 })
 
+
+const obterVoz = (falar: string) => {
+  const voz = new SpeechSynthesisUtterance()
+  voz.lang = "pt-br"
+  voz.text = falar
+  speechSynthesis.speak(voz);
+}
+
+const vozesTalckBack = (elementoHtml: HTMLElement) => {
+  elementoHtml.addEventListener("mouseout", () => {
+    obterVoz(elementoHtml.innerText)
+  })
+}
+
+const botoes = document.querySelectorAll("button")
+
+vozesTalckBack(mensagemVazioInput())
+vozesTalckBack(h1)
+vozesTalckBack(copiarUrlButton)
+for (let j = 0; j < li.length; j++) {vozesTalckBack(li[j]), vozesTalckBack(botoes[j]), console.log(botoes[j]);
+}
+vozesTalckBack(textoLinks)
 
 
 
