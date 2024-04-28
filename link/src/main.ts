@@ -257,7 +257,7 @@ vozesTalckBack(textoLinks)
 
 
 
-const manipularQuery = () => {
+const manipularQuery = (): void => {
   const imagemPessoa = document.querySelector(".imagem-encurtador") as HTMLImageElement
   const imgContainer2 = document.querySelector(".imgContainer2") as HTMLDivElement
   const imagemContainer = document.querySelector(".imagem-container") as HTMLDivElement
@@ -265,6 +265,7 @@ const manipularQuery = () => {
     imagemPessoa.src = "public/assets/images/illustration-working.svg"
     imgContainer2.appendChild(imagemPessoa)
   }else{
+    imagemPessoa.src = "public/assets/images/illustration-working.svg"
     imagemContainer.appendChild(imagemPessoa)
   }
 }

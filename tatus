@@ -1,0 +1,137 @@
+[33mcommit a7de7203deca7005656dab98778e4437dcc06457[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Sun Apr 28 11:33:58 2024 -0700
+
+    imagem quando trocar de tela altyerando ok
+
+[33mcommit f0a910a8c53626e60b3243b0442ae30b3ae43404[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Mon Apr 15 16:36:22 2024 -0700
+
+    talkbackj ok
+
+[33mcommit c78582b91835d31e474455a020ef7f411252c057[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Mon Apr 15 07:16:22 2024 -0700
+
+    agora o usuario pode definir o tamanho do qrcode
+
+[33mcommit 12da1b47383b5cc49c6c6e94ea54e4ae52f3d062[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Fri Apr 12 17:45:05 2024 -0700
+
+    media query no qrcode ok
+
+[33mcommit 6d30dd698b3d93327ef9f640247b66aa3606354a[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Fri Apr 12 17:29:28 2024 -0700
+
+    qr baixando
+
+[33mcommit fac1a9ffc843817f2d131f4dc75c698ddb629e41[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Fri Apr 12 08:43:04 2024 -0700
+
+    .
+
+[33mcommit 964d2941cddf90440cd54e0577c4a7c5181a62a4[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Fri Apr 12 08:39:12 2024 -0700
+
+    grid ok
+
+[33mcommit a135561b76f92ed39ed9cc8e449713d9375debef[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Fri Apr 12 08:18:35 2024 -0700
+
+    qrcode segndo gerado
+
+[33mcommit 55d62b795da8efe50da569cf87deebaaaf2a1b35[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Thu Apr 11 09:12:49 2024 -0700
+
+    gerar qrcodes estou colocandoapi
+
+[33mcommit 21c9f1ebec18d26f87f800eae07a126978983434[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Thu Apr 11 07:55:22 2024 -0700
+
+    funcao do input vazio ok.
+
+[33mcommit acf69a9d953f6ab99e758e6d8ad111689eeac0b3[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Thu Apr 11 07:53:20 2024 -0700
+
+    funcao de salvMENTO OK
+
+[33mcommit dc3f57a3e86f519e1fea422b89ab00a3d524b2c8[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Thu Apr 11 07:24:06 2024 -0700
+
+    ok
+
+[33mcommit 74954ab7e3e90898a2780e25081c11cc2acdbc0d[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Wed Apr 10 18:54:24 2024 -0700
+
+    estou mexendo no salvamento dos links e do darkmode
+
+[33mcommit a302ef448e81464a89eff347bc64e31e5f7fe240[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Wed Apr 10 18:37:03 2024 -0700
+
+    h1 ok
+
+[33mcommit 462d640d9f9f3ab505d73ff3112a909a64f0dad0[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Wed Apr 10 18:14:46 2024 -0700
+
+    ok
+
+[33mcommit 247f2c1175d5685d17495b21d868d932dbe25591[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Wed Apr 10 18:08:14 2024 -0700
+
+    darkmode ok
+
+[33mcommit 2791a9ab588e1c9dcafe069569ed4c3ff579cf19[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Wed Apr 10 08:36:38 2024 -0700
+
+    tela de carragemnto ok.
+
+[33mcommit d475fa1320b7dbb97c84247a9d8b2dd99054f21f[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Apr 9 18:39:32 2024 -0700
+
+    alguas coisas colocadss
+
+[33mcommit eac5d2900c8e332141e3ddf0adad17fc4bfed779[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Apr 9 18:00:02 2024 -0700
+
+    copiando links ok.
+
+[33mcommit 76007de831748ddf648ba1050bcb97bcec3e0519[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Apr 9 17:50:52 2024 -0700
+
+    links aparecendo na tag a
+
+[33mcommit cd3928f18c63b3a2526f7c17df2cc38641c3ab83[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Apr 9 16:48:18 2024 -0700
+
+    encurtando de links ok.
+
+[33mcommit 9acfa623f2ff6fd49040856975e18f9e9c22515f[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Mar 5 08:11:28 2024 -0800
+
+    fazendo leyout
+
+[33mcommit f56269a9b51aae0b4d9cb2fd5135d89d57f71b8d[m
+Author: carlos676767 <carlitobr730@gmail.com>
+Date:   Tue Mar 5 07:05:02 2024 -0800
+
+    encurtador de link

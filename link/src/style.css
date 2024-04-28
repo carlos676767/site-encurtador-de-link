@@ -448,6 +448,11 @@ input{
 
 
 
+
+
+
+
+
 @media (max-width: 768px) {
   .menu {
     display: block;
@@ -466,6 +471,15 @@ input{
     color: white;
   }
 
+  .saiba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+  }
   .menu a {
     padding: 1rem 0;
     margin-inline: 1rem;
@@ -526,11 +540,19 @@ input{
       object-fit: cover;
       width: 100%;
     }
-  .links, .enviar,.linksResultados, h1{
-    width: 100%;
-    flex-wrap: wrap;
-  }
+    .links,
+    .enviar,
+    .linksResultados, h1 {
+      width: 100%;
+      flex-wrap: wrap;
+    }
   
+  h1, .texto-links{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+  }
   br{
     display: none;
   }
