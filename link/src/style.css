@@ -430,6 +430,24 @@ input{
   width: 100%;
 }
 
+
+.swal2-popup  {
+  background-color: #2acfcf; 
+  border: 2px solid white;
+  color: white;
+  font-family: "Poppins";
+  outline: none;
+}
+
+.swal2-actions .swal2-confirm{
+  background-color: #2acfcf; 
+  color: white;
+  font-family: "Poppins";
+  outline: none;
+}
+
+
+
 @media (max-width: 768px) {
   .menu {
     display: block;
@@ -501,13 +519,13 @@ input{
     margin-right: auto;
     flex-direction: column;
   }
-  .imagem-encurtador{
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover;
-    width: 100%;
-  }
+    .imagem-encurtador {
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+      width: 100%;
+    }
   .links, .enviar,.linksResultados, h1{
     width: 100%;
     flex-wrap: wrap;

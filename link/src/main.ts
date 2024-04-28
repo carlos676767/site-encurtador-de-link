@@ -4,10 +4,7 @@ const botao = document.querySelector(".enviar") as HTMLButtonElement;
 
 
 
-const exibirUrl = (data: string) => {
-  const p = document.querySelector("p") as HTMLParagraphElement;
-  p.textContent = data;
-};
+
 
 const copiarUrl = (data: any) => {
   navigator.clipboard.writeText(data);
@@ -41,7 +38,7 @@ copiarUrlButton.addEventListener("click", () => {
  mudarNomeBotao()
 })
 
-const tagAExibirLink = (link: string) => {
+const exibirTagA = (link: string) => {
   const redirecionarLink = document.getElementById("rerecionarLink") as HTMLAnchorElement;
   const salvarLink = redirecionarLink.href = link;
   redirecionarLink.innerHTML = salvarLink
@@ -49,34 +46,37 @@ const tagAExibirLink = (link: string) => {
 
 
 
-const configuracoesCarregamnento = (valor: string, valor2: string) => {
+const configurarLoading = (valor: string, valor2: string) => {
   const loader = document.querySelector(".loader") as HTMLDivElement
   const encurtarLinksDiv = document.querySelector(".encurtarLinks") as HTMLDivElement
   loader.style.display = valor
   encurtarLinksDiv.style.display = valor2
 }
 
-const links: string[] = []
-//aqui ainda sera mexido
-const historicoLinks = (urls: string) => {
-  links.push(urls)
-  localStorage.setItem("linksSalvos", JSON.stringify(links))
-}
 
-const inputVzio = () => {
+//aqui ainda sera mexido
+const links: string[] = []
+
+const historicoLinks = (urls: string) => {
+  links.push(urls);
+  localStorage.setItem("linksSalvos", JSON.stringify(links));
+};
+
+
+const inputEstaVazio = () => {
   return url.value == ""
 }
 
-const guardarUrl = (result: string) => {
+const guardarUrlEncurtada = (result: string) => {
  return armazenarLink = result
 }
 
 const encurtarLink = async () => {
-  if (inputVzio()) {
+  if (inputEstaVazio()) {
     mensagemVazioInput();
   } else {
     try {
-      configuracoesCarregamnento("block", "none")
+      configurarLoading("block", "none")
       const data = await fetch("https://cleanuri.com/api/v1/shorten", {
         method: "POST",
         headers: {
@@ -87,16 +87,19 @@ const encurtarLink = async () => {
       const response = await data.json();
       const { result_url } = response;
       exibirResultados(result_url);
-      tagAExibirLink(result_url);
-      configuracoesCarregamnento("none", "")
+      exibirTagA(result_url);
+      configurarLoading("none", "")
       historicoLinks(result_url)
-      guardarUrl(result_url)
-      exibirUrl(result_url)
+      guardarUrlEncurtada(result_url)
     } catch (error) {
       console.error("Erro ao processar a solicitação:", error);
     }
   }
 };
+
+
+const recuperar = JSON.parse(localStorage.getItem("linksSalvos") ?? "{}")
+
 
 botao.addEventListener("click", () => {
   encurtarLink();
@@ -149,8 +152,8 @@ const salvarEstadoCheckbox = (valorBoleano: boolean) => {
 
 const salvarDdaosLocalStorage = () => {
   const recuperarValor = localStorage.getItem("darkmode")
-  const recuperar = JSON.parse(localStorage.getItem("linksSalvos") ?? "{}")
-  console.log(recuperar);
+
+
   
   if (recuperarValor === String(true)) {
     addCLssesCss(document.body, "daerkmode", "whiteMode")
@@ -216,7 +219,8 @@ const baixarQrCODE = (qr: HTMLElement) => {
 const mensagemQrGerado = () => {
   Swal.fire({
     text: "QrCoDe gerado com sucesso!",
-    icon: "success"
+    icon: "success",
+    confirmButtonText: "Ok"
   });
 }
 
@@ -241,13 +245,28 @@ const vozesTalckBack = (elementoHtml: HTMLElement) => {
 }
 
 const botoes = document.querySelectorAll("button")
+const p = document.querySelectorAll("p")
 
-vozesTalckBack(mensagemVazioInput())
 vozesTalckBack(h1)
 vozesTalckBack(copiarUrlButton)
-for (let j = 0; j < li.length; j++) {vozesTalckBack(li[j]), vozesTalckBack(botoes[j]), console.log(botoes[j]);
-}
+for (let j = 0; j < li.length; j++) {vozesTalckBack(li[j]),vozesTalckBack(p[j])}
+for (let j = 0; j < p.length; j++) {vozesTalckBack(p[j])}
+for (let j = 0; j < botoes.length; j++) {vozesTalckBack(botoes[j])}
 vozesTalckBack(textoLinks)
 
 
 
+
+const manipularQuery = () => {
+  const imagemPessoa = document.querySelector(".imagem-encurtador") as HTMLImageElement
+  const imgContainer2 = document.querySelector(".imgContainer2") as HTMLDivElement
+  const imagemContainer = document.querySelector(".imagem-container") as HTMLDivElement
+  if (matchMedia("(max-width: 768px)").matches) {
+    imagemPessoa.src = "public/assets/images/illustration-working.svg"
+    imgContainer2.appendChild(imagemPessoa)
+  }else{
+    imagemContainer.appendChild(imagemPessoa)
+  }
+}
+manipularQuery()
+addEventListener("resize", manipularQuery)

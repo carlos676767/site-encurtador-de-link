@@ -36,16 +36,19 @@
   </header>
   
     <main>
+      <div class="imgContainer2"></div>
       <div>
-       <h1>Encurte seu links <br>com a <span>Shortly</span></h1>
-       <p class="texto-links">
-        Encurtar links hoje é fácil com nosso encurtador. 
-       </p>
-       <button class="saiba">Saiba mais</button>
+        <h1>Encurte seu links <br>com a <span>Shortly</span></h1>
+        <p class="texto-links">
+          Encurtar links hoje é fácil com nosso encurtador.
+        </p>
+        <button class="saiba">Saiba mais</button>
       </div>
-      <img src="public/assets/images/illustration-working.svg" alt="" class="imagem-encurtador">
+    <div class="imagem-container">
+      <img src="public/assets/images/illustration-working.svg" alt="pessoa" class="imagem-encurtador">
+    </div>
     </main>
-
+    
     <div class="encurtarLinks">
       <div class="linksResultados">
         <p id="exibirLink">https://linkExemplo.com.br</p>
@@ -53,7 +56,7 @@
         <button id="copiarUrl">Copiar</button>
       </div>
       <div class="links">
-        <label><input type="text" maxlength="10000000000" class="valor"> <button class="enviar" id="enviar">Encurtar</button></label>
+        <label><input type="text" class="valor"> <button class="enviar" id="enviar">Encurtar</button></label>
         <p id="mensagemVazio"></p>
         <div class="grid-container">
           <div class="item">
@@ -73,6 +76,7 @@
     <div class="loader"></div>
     <script type="module" src="/src/main.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script>
-
-  </body>
-</html>
+    
+    </body>
+    
+    </html>
